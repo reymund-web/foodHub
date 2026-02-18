@@ -1,0 +1,213 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: orangered;
+    padding: 20px;
+}
+
+.container{
+    display: flex;
+    box-shadow: 0 15 35px rgba(0,0,0,5);
+    width: 900px;
+    height: 600px;
+    background: white;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.left-panel{
+    flex: 1.2;
+    background: linear-gradient(135deg, #FF8C00, #8A039C);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-form h1{
+    color: black;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.username-field{
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-with-icon{
+    position: relative;
+}
+.input-with-icon i{
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+}
+.password-field{
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.username-field input{
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border: none;
+    border-radius: 5px;
+    background: #f0f0f0;
+}
+.username-field input:focus{
+    border-color: #8A039C;
+    box-shadow: 0 0 0 2px rgba(138, 3, 156, 0.2);
+    outline: none;
+
+}
+.password-field input{
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border: none;
+    border-radius: 5px;
+    background: #f0f0f0;
+}
+
+.forgot-pass{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 25px;
+}
+.forgotPass{
+    color: #6a11cb;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.forgotPass:hover{
+    color: white;
+}
+.login-btn{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #8A039C;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.login-btn:hover{
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #27539e, #6a11cb, #8A039C, #8A039C);
+    transition: color 0.3s ease;
+    box-shadow: 0 5px 15px rgba(138, 3, 156, 0.3);
+}
+.or {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    color: black;
+    font-size: 0.9rem;
+}
+
+.or::before,
+.or::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: black;
+}
+
+.or::before {
+    margin-right: 15px;   /* space between line and text */
+}
+
+.or::after {
+    margin-left: 15px;    /* space between text and line */
+}
+
+
+.login-option-btn{
+    width: auto;
+    padding: 10px 20px;
+}
+
+.register{
+    margin-top: 10%;
+    text-align: center;
+    color: #555;
+}
+.register a{
+    color: #0d7bdc;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+.register a:hover{
+    color: white;
+    text-decoration: underline;
+}
+
+.login-social-btn{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icon-btn{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    color: #555;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.social-icon-btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.google:hover{
+    background-color: #db4437;
+    color: white;
+}
+.facebook:hover{
+    background-color: #3b5998;
+    color: white;
+}
+.apple:hover{
+    background-color: #000;
+    color: white;
+}
+
+.right-panel{
+    flex: 1;
+    background: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.right-panel img {
+    align-items: center;
+    max-width: 95%;      /* adjust this */
+    height: auto;      /* keeps proportions */
+    object-fit: contain;
+}
+
