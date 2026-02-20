@@ -9,7 +9,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: orangered;
+    background: #D9D9D9;
     padding: 20px;
 }
 
@@ -25,7 +25,7 @@ body{
 
 .left-panel{
     flex: 1.2;
-    background: linear-gradient(135deg, #FF8C00, #8A039C);
+    background: #727175c4;
     padding: 50px;
     display: flex;
     flex-direction: column;
@@ -86,7 +86,7 @@ body{
     margin-bottom: 25px;
 }
 .forgotPass{
-    color: #6a11cb;
+    color: #000000;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
@@ -99,7 +99,7 @@ body{
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background: #8A039C;
+    background: #e6741c;
     color: white;
     font-size: 1rem;
     cursor: pointer;
@@ -107,9 +107,9 @@ body{
 }
 .login-btn:hover{
     transform: translateY(-2px);
-    background: linear-gradient(135deg, #27539e, #6a11cb, #8A039C, #8A039C);
+    background: #d13f0a;
     transition: color 0.3s ease;
-    box-shadow: 0 5px 15px rgba(138, 3, 156, 0.3);
+    box-shadow: 0 5px 15px rgba(5, 1, 5, 0.3);
 }
 .or {
     display: flex;
@@ -147,7 +147,7 @@ body{
     color: #555;
 }
 .register a{
-    color: #0d7bdc;
+    color: #000000;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
