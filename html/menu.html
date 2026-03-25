@@ -2,11 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="foodHub" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/menuPage-style.css">
-    <title>foodHub Menu</title>
+    <title>foodHub - Menu</title>
+    <!-- Filled Icons -->
+    <link href="https://cdn.boxicons.com/3.0.8/fonts/filled/boxicons-filled.min.css" rel="stylesheet">
+    <!-- Brand Icons -->
+    <link href="https://cdn.boxicons.com/3.0.8/fonts/brands/boxicons-brands.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/menu-style.css">
 </head>
 <body>
-    
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="../img/foodHUB.svg" alt="foodHUB Logo" class="nav-logo">
+        </div>
+        <div class="nav-center">
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Deals</a></li>
+                <li><a href="#">Menu</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search food...">
+                <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
+            </div>
+            <div class="profile-icon">
+                <i class="fa fa-user-circle"></i>
+            </div>
+            <div class="logout-btn">
+                <button type="submit" class="logout-btn" >Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <h2>Categories</h2>
+            <ul class="filter-list" id="category-filters">
+                <li><button class="filter-btn active" data-filter="all">All</button></li>
+                <li><button class="filter-btn" data-filter="appetizer">Appetizer</button></li>
+                <li><button class="filter-btn" data-filter="beverage">Beverage</button></li>
+                <li><button class="filter-btn" data-filter="main dish">Main Dish</button></li>
+                <li><button class="filter-btn" data-filter="salad">Salad</button></li>
+                <li><button class="filter-btn" data-filter="dessert">Dessert</button></li>
+            </ul>
+        </aside>
+
+        <section class="menu-content">
+            <div class="menu-grid" id="menu-grid">
+                <!-- Food cards will be dynamically injected here by menu.js -->
+            </div>
+        </section>
+    </div>
+
+    <script src="../js/menu.js"></script>
 </body>
 </html>

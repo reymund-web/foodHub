@@ -16,17 +16,17 @@
             <div class="left-panel">
                 <div class="login-form">
                     <h1>Welcome</h1>
-                    <form action="">
+                    <form id="loginForm">
                         <div class="username-field">
                             <div class="input-with-icon">
                                 <i class="bxf bx-user" style="color:#000000;" ></i>
-                                <input type="username" placeholder="Username or Email" required>
+                                <input type="text" id="username" placeholder="Username or Email" required>
                             </div>
                         </div>
                         <div class="password-field">
                             <div class="input-with-icon">
                                 <i class="bxf bx-lock" style="color:#000000;"></i>
-                                <input type="password" placeholder="Password" required>
+                                <input type="password" id="password" placeholder="Password" required>
                             </div>
                         </div>
                         <div class="forgot-pass">
@@ -57,5 +57,6 @@
                 <img src="../img/foodHUB.svg" alt="foodHUB Logo">
             </div>
         </div>
+        <script src="../js/login.js"></script>
     </body>
 </html>
