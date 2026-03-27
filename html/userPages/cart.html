@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <!-- Add FontAwesome since it's used for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../../css/user-css/cart-style.css">
+</head>
+<body>
+    <div class="cart-container">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-btn"><i class="fa fa-times"></i></button>
+        </div>
+        <div class="cart-items">
+            <!-- Items injected via cart.js -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <h3>Total:</h3>
+                <p>$0.00</p>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Include Javascript to manage cart -->
+    <script src="../../js/cart.js"></script>
+</body>
+</html>

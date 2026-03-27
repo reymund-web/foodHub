@@ -83,7 +83,7 @@ function generateFoodCard(food) {
                 <p class="card-desc">${food.description}</p>
                 <div class="card-footer">
                     <span class="card-price">${food.price}</span>
-                    <button class="add-btn" onclick="addToCart('${food.name}')">Add +</button>
+                    <button class="add-btn" onclick="addToCart(${food.id})">Add +</button>
                 </div>
             </div>
         </div>
@@ -145,9 +145,75 @@ searchInput.addEventListener("input", (e) => {
     }
 });
 
-// Simple add to cart mock
-function addToCart(foodName) {
-    alert(`${foodName} added to your order!`);
+// Add to cart functionality using local storage
+function addToCart(foodId) {
+    const food = foodItems.find(f => f.id === foodId);
+    if (!food) return;
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let existingItem = cart.find(item => item.id === foodId);
+    
+    // Convert price string (e.g., "$8.99") to number
+    const priceNum = parseFloat(food.price.replace(/[^0-9.-]+/g,""));
+
+    if (existingItem) {
+        existingItem.qty += 1;
+    } else {
+        cart.push({
+            id: food.id,
+            name: food.name,
+            price: priceNum,
+            qty: 1
+        });
+    }
+    
+    localStorage.setItem('cart', JSON.stringify(cart));
+    
+    // Automatically open the cart
+    //openCart();
+    
+    // Trigger update in cart iframe
+    const cartFrame = document.getElementById('cart-frame');
+    if (cartFrame && cartFrame.contentWindow) {
+        const event = new Event('cartUpdated');
+        cartFrame.contentWindow.dispatchEvent(event);
+    }
+    updateCartBadge();
 }
 
+// Global cart badge updater and cart controls
+function updateCartBadge() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+    const cartBadge = document.getElementById('cart-badge');
+    if (cartBadge) {
+        cartBadge.textContent = totalItems;
+        cartBadge.style.display = totalItems > 0 ? 'block' : 'none';
+    }
+}
 
+function openCart() {
+    const cartFrame = document.getElementById('cart-frame');
+    const cartOverlay = document.getElementById('cart-overlay');
+    if (cartFrame) cartFrame.style.right = '0';
+    if (cartOverlay) cartOverlay.style.display = 'block';
+}
+
+function closeCart() {
+    const cartFrame = document.getElementById('cart-frame');
+    const cartOverlay = document.getElementById('cart-overlay');
+    if (cartFrame) cartFrame.style.right = '-400px';
+    if (cartOverlay) cartOverlay.style.display = 'none';
+}
+
+// Update cart badge right away on load
+document.addEventListener('DOMContentLoaded', updateCartBadge);
+
+// Listen for messages from the cart iframe (avoid local CORS issues)
+window.addEventListener('message', (event) => {
+    if (event.data === 'closeCart') {
+        closeCart();
+    } else if (event.data === 'updateCartBadge') {
+        updateCartBadge();
+    }
+});
